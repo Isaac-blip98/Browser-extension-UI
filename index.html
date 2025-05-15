@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="./style.css" />
-
-    <title>Browser extensions manager UI</title>
-  </head>
-
-  <body>
-    <div class="header">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body  id="body" class="darkmode">
+  <div class="container">
+    <div class="searchbar">
       <div class="logo">
-        <img src="./assets/images/logo.svg" alt="extension logo" />
+        <img src="./assets/images/logo.svg" alt="extensions" class="logo">
       </div>
-      <div onclick= "togglemode()" class="icon">
-        <img src="./assets/images/icon-sun.svg" alt="sun icon" id="sun" />
-      </div>
-    </div>
-    <div class="main">
-      <div class="title">
-        <h1>Extension List</h1>
-        <div class="filter-button">
-          <button class="filter-btn all">All</button>
-          <button class="filter-btn active">Active</button>
-          <button class="filter-btn inactive">Inactive</button>
+      <div class="light" onclick="toggleMode()">
+         <img src="./assets/images/icon-sun.svg" alt="light mode" id="lightmode">
         </div>
-      </div>
-      <div class="extension-list" id="extension-list"></div>
     </div>
-  </body>
-  <script src="./script.js"></script>
+    <div class="filterdiv">
+      <h1>Extension List</h1>
+      <div class="btns">
+        <button class="btn all" >All</button>
+        <button class="btn">Active</button>
+        <button class="btn">Inactive</button>
+      </div>
+    </div>
+    <div class="extensionlist" id="extensionlist">
+      <div class="card" id="card"></div>
+    </div>
+  </div>
+  <script src="./script.js" ></script>
+</body>
 </html>

@@ -1,213 +1,143 @@
-* {
-  margin: 0;
-  padding: 0;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body {
-  background-color: #050a1e;
-}
-body.darkmode {
-  background-color: #050a1e;
-}
-body.lightmode {
-  background-color: #f0f0f0;
 
-  .title h1 {
+body.darkmode{
+    background: linear-gradient(to bottom, #050a1d, #081235);
+    height: fit-content;
+    width: 100vh;
+}
+body.lightmode{
+    background: linear-gradient(to bottom, #f0f0f0, #beb6b6);
     color: black;
-  }
+
+    .container .filterdiv{
+        color: black;
+    }
+    .container .searchbar{
+        background: #f0f0f0;
+    }
+
+    .container .searchbar .light{
+        background-color: #f0f0f0;
+        border: 1px solid  transparent;
+    }
+    .container .filterdiv .btn{
+        background: #f0f0f0;
+        border: 1px solid black;
+        color: black;
+    }
+    .container .filterdiv .btn:hover{
+        background: #f0f0f0;
+        border: 1px solid black;
+        color: black;
+    }
+
+    
 }
-.header {
-  background-color: #1f2535;
-  width: 70%;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  margin-left: 200px;
-  margin-top: 30px;
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr;
+    gap: 1rem;
+    width: 80vw;
+    height: fit-content;
+    margin: 5vh 10vw;
 }
-.logo {
-  margin-left: 10px;
+.container .searchbar{
+    background: #1f2535;
+    border-radius:10px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 }
-.icon {
-  width: 40px;
-  height: 40px;
-  background-color: #2f354c;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  padding: 2px;
-  align-items: center;
-  margin-right: 10px;
+.container .searchbar .light{
+    border: 1px solid  transparent;
+    padding: 1rem;
+    background-color: #2f354b;
+    border-radius: 10px;
+
 }
-.main {
-  width: 70%;
-}
-.title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 200px;
-  margin-top: 30px;
-  width: 100%;
-}
-.title h1 {
-  color: white;
-}
-.all {
-  width: 40px;
-  height: 30px;
-  border-radius: 20px;
-  background-color: #2f354b;
-  color: white;
-  font-size: 10px;
-}
-.active {
-  width: 60px;
-  height: 30px;
-  border-radius: 20px;
-  background-color: #2f354b;
-  color: white;
-  font-size: 10px;
-}
-.inactive {
-  width: 70px;
-  height: 30px;
-  border-radius: 20px;
-  background-color: #2f354b;
-  color: white;
-  font-size: 10px;
-}
-.filter-btn:hover {
-    transform: scale(1.1);
+.container .filterdiv{
+    border-radius:10px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: white;
 }
 
-.extension-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 10px;
+.filterdiv .btn{
+    padding: 1rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    background: #2f354b;
+    border: 1px solid white;
+    color: white;
 }
 
-.filter-button .filter-btn {
-  cursor: pointer;
-}
+.container .extensionlist{
+    background: transparent;
+    border-radius:10px ;
 
-.extension-card {
-  background: hsl(224, 26%, 16%);
-  border-radius: 10px;
-  height: auto;
-  padding: 15px;
-  align-content: space-between;
-  transition: opacity 0.3s ease;
 }
-
-.extension-card.inactive {
-  opacity: 0.7;
+.container .extensionlist .card{
+    border-radius: 10px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1rem;
 }
-
-.extension-header {
-  display: flex;
-  margin-bottom: 10px;
+.item{
+    background: #1f2535;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 1rem;
+    height: 20vh;
 }
-
-.extension-logo {
-  width: 45px;
-  height: 45px;
-  margin-right: 10px;
-  border-radius: 5px;
+.item .description h3{
+    color: rgba(255, 255, 255, 0.8);
 }
-.extension-texts {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 8px;
+.item p{
+    color: rgba(255, 255, 255, 0.6);
 }
-.extension-name {
-  font-size: 18px;
-  margin: 0;
-  color: hsl(210, 12%, 90%);
+.item .identity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
 }
-
-.extension-description {
-  font-size: 15px;
-  color: hsl(226, 6%, 57%);
-  margin-bottom: 15px;
+.item .description{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
-
-.extension-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.item .controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;;
+    padding: 1rem;
 }
-.extension-footer > .btn-remove {
-  color: white;
-  background: hsl(224, 26%, 16%);
-  padding: 8px;
-  border: 1px solid hsl(216, 6%, 85%);
-  border-radius: 8px;
-  cursor: pointer;
+.item .controls .btn{
+    padding:0.5rem;
+    border-radius: 30px;
+    font-size: 15px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
 }
-.extension-footer > .btn-remove:hover {
-  color: hsl(224, 26%, 16%);
-  background: hsl(216, 6%, 85%);
+.item .controls .btn1{
+    height: 20px;
+    width: 40px;
+    border-radius: 30px;
+    background:  rgba(255, 255, 255, 0.4);
 }
-
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-}
-
-.toggle-checkbox {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.3s;
-  border-radius: 20px;
-}
-
-.toggle-slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: 0.3s;
-  border-radius: 50%;
-}
-
-.toggle-checkbox:checked + .toggle-slider {
-  background-color: #ff5555;
-}
-
-.toggle-checkbox:checked + .toggle-slider:before {
-  transform: translateX(20px);
-}
-
-.remove-btn button {
-  color: #ff5555;
-  font-size: 14px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.no-results {
-  color: #fff;
-  text-align: center;
-  grid-column: 1 / -1;
+.item .controls .toggle{
+    height: 100%;
+    width: 50%;
+    background: white;
+    border-radius: 50%;
 }
