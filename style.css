@@ -1,143 +1,175 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body.darkmode{
-    background: linear-gradient(to bottom, #050a1d, #081235);
-    height: fit-content;
-    width: 100vh;
+body.darkmode {
+  background: linear-gradient(to bottom, #050a1d, #081235);
+  height: fit-content;
+  width: 100vh;
 }
-body.lightmode{
-    background: linear-gradient(to bottom, #f0f0f0, #beb6b6);
+body.lightmode {
+  background: linear-gradient(to bottom, #f0f0f0, #beb6b6);
+  color: black;
+
+  .container .filterdiv {
     color: black;
+  }
+  .container .searchbar {
+    background: #f0f0f0;
+  }
 
-    .container .filterdiv{
-        color: black;
-    }
-    .container .searchbar{
-        background: #f0f0f0;
-    }
+  .container .searchbar .light {
+    background-color: #f0f0f0;
+    border: 1px solid transparent;
+  }
+  .container .filterdiv .btn {
+    background: #f0f0f0;
+    border: 1px solid black;
+    color: black;
+  }
+  .filterdiv .btn:hover {
+    background-color: #ef5c56;
+  }
+  .item {
+    background-color: #fbfdff;
+  }
+  .description h3 {
+    color: black;
+  }
+  .description p {
+    color: hsl(226, 11%, 37%);
+  }
+  .controls .btn {
+    color: black;
+    border: 1px hsl(226, 11%, 37%) solid;
+  }
+  .controls .btn1 {
+    background-color: (226, 11%, 37%);
+    border: 1px red solid;
+  }
+  .controls .toggle {
+    background-color: hsl(225, 23%, 24%);
+  }
+  .searchbar .icon {
+    background-color: hsl(217, 61%, 90%);
+    border: 1px solid transparent;
+  }
+}
+.container {
+  display: grid;
+  grid-template-rows: repeat (3, 1fr);
+  gap: 1rem;
+  width: 80vw;
+  height: fit-content;
+  margin: 5vh 10vw;
+}
+.searchbar {
+  background: #1f2535;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 9vh;
+}
+.container .searchbar .icon {
+  border: 1px solid transparent;
+  padding: 1rem;
+  background-color: #2f354b;
+  border-radius: 10px;
+}
+.filterdiv {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  color: white;
+}
 
-    .container .searchbar .light{
-        background-color: #f0f0f0;
-        border: 1px solid  transparent;
-    }
-    .container .filterdiv .btn{
-        background: #f0f0f0;
-        border: 1px solid black;
-        color: black;
-    }
-    .container .filterdiv .btn:hover{
-        background: #f0f0f0;
-        border: 1px solid black;
-        color: black;
-    }
-
-    
+.filterdiv .btn {
+  padding: 1rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  background: #2f354b;
+  border: 1px solid white;
+  color: white;
 }
-.container{
-    display: grid;
-    grid-template-rows: 1fr 1fr 6fr;
-    gap: 1rem;
-    width: 80vw;
-    height: fit-content;
-    margin: 5vh 10vw;
-}
-.container .searchbar{
-    background: #1f2535;
-    border-radius:10px ;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-}
-.container .searchbar .light{
-    border: 1px solid  transparent;
-    padding: 1rem;
-    background-color: #2f354b;
-    border-radius: 10px;
-
-}
-.container .filterdiv{
-    border-radius:10px ;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    color: white;
+.btn:hover {
+  background-color: #ef5c56;
 }
 
-.filterdiv .btn{
-    padding: 1rem;
-    border-radius: 30px;
-    font-size: 1rem;
-    background: #2f354b;
-    border: 1px solid white;
-    color: white;
+.filterdiv .all {
+  width: 50px;
+}
+.filterdiv .active {
+  width: 60px;
+}
+.filterdiv .inactive {
+  width: 70px;
+}
+.extensionlist {
+  background: transparent;
+  border-radius: 10px;
+}
+.container .extensionlist .card {
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.item {
+  background: #1f2535;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  padding: 1rem;
+  height: 30vh;
 }
 
-.container .extensionlist{
-    background: transparent;
-    border-radius:10px ;
-
+.item p {
+  color: rgba(255, 255, 255, 0.6);
 }
-.container .extensionlist .card{
-    border-radius: 10px;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1rem;
+.item .identity {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 1rem;
 }
-.item{
-    background: #1f2535;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
-    padding: 1rem;
-    height: 20vh;
+.item .description {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
-.item .description h3{
-    color: rgba(255, 255, 255, 0.8);
+.identity .description h3 {
+  font-size: 17px;
+  color: #edf2f8;
 }
-.item p{
-    color: rgba(255, 255, 255, 0.6);
+.item .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 70px;
 }
-.item .identity{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    gap: 1rem;
+.item .controls .btn {
+  padding: 0.5rem;
+  border-radius: 30px;
+  font-size: 15px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 }
-.item .description{
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+.item .controls .btn1 {
+  height: 20px;
+  width: 40px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.4);
 }
-.item .controls{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;;
-    padding: 1rem;
-}
-.item .controls .btn{
-    padding:0.5rem;
-    border-radius: 30px;
-    font-size: 15px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-}
-.item .controls .btn1{
-    height: 20px;
-    width: 40px;
-    border-radius: 30px;
-    background:  rgba(255, 255, 255, 0.4);
-}
-.item .controls .toggle{
-    height: 100%;
-    width: 50%;
-    background: white;
-    border-radius: 50%;
+.item .controls .toggle {
+  height: 100%;
+  width: 50%;
+  background: white;
+  border-radius: 50%;
 }
